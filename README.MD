@@ -10,8 +10,7 @@ To install these configuration files for your mpv player:
    * Windows: `%APPDATA%\mpv`
    * Linux and macOS: `~/.config/mpv`
 2. Clone this repository into that directory or copy the files manually.
-3. Delete one of the font files if not needed or just keep both.
-4. Restart mpv.
+3. Restart mpv.
 
 ## Features and Plugins
 
