@@ -32,5 +32,3 @@ To learn more about how to tweak your `mpv.conf` file, check out these resources
 
 * [Official mpv Manual: Configuration Files](https://mpv.io/manual/stable/#configuration-files)
 * [Community Guide: mpv-conf](https://iamscum.wordpress.com/guides/videoplayback-guide/mpv-conf/)
-
-The name of this repository was inspired by [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim). 
