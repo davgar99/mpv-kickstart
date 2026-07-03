@@ -2,6 +2,10 @@
 
 This mpv configuration serves as a solid foundation for your own setup. It provides a functional and modern starting point with sane defaults, which you can use as-is or tweak to your heart's content.
 
+<img width="2115" height="1317" alt="Image" src="https://github.com/user-attachments/assets/9f47bc02-bb7d-4a8c-af4d-daa84fead54c" />
+<img width="2115" height="1317" alt="Image" src="https://github.com/user-attachments/assets/4cb0acd4-ab59-4b94-bd94-2fff327a68d2" />
+<img width="800" height="467" alt="Image" src="https://github.com/user-attachments/assets/34ae1aab-fc41-4449-9c5c-b2d2c4ceb144" />
+
 ## Installation
 
 To install these configuration files for your mpv player:
