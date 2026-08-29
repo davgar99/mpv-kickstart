@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Install validation tools
-        run: sudo apt-get update && sudo apt-get install -y lua5.4 mpv
+        run: sudo apt-get update && sudo apt-get install -y lua5.4 mpv shellcheck
 
       - name: Run repository checks
         run: bash tools/check.sh
