@@ -1,0 +1,6 @@
+# Upstream raw URL	Local destination
+https://raw.githubusercontent.com/Samillion/ModernZ/main/modernz.lua	scripts/modernz.lua
+https://raw.githubusercontent.com/Samillion/ModernZ/main/extras/pause-indicator-lite/pause_indicator_lite.lua	scripts/pause_indicator_lite.lua
+https://raw.githubusercontent.com/Samillion/ModernZ/main/extras/pip-lite/pip_lite.lua	scripts/pip_lite.lua
+https://raw.githubusercontent.com/po5/thumbfast/master/thumbfast.lua	scripts/thumbfast.lua
+https://raw.githubusercontent.com/Samillion/mpv-boxtowide/master/boxtowide.lua	scripts/boxtowide.lua
