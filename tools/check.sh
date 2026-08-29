@@ -5,6 +5,9 @@ repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 cd "$repo_root"
 
 bash -n tools/update-plugins.sh tools/check.sh
+if command -v shellcheck >/dev/null 2>&1; then
+  shellcheck tools/update-plugins.sh tools/check.sh
+fi
 
 if command -v luac5.4 >/dev/null 2>&1; then
   lua_compiler=luac5.4
