@@ -44,6 +44,32 @@ for destination in "${destinations[@]}"; do
   fi
 done
 
+# Catch stale ModernZ options when upstream removes or renames a setting.
+python3 <<'PY'
+from pathlib import Path
+import re
+
+script = Path('scripts/modernz.lua').read_text()
+config = Path('script-opts/modernz.conf').read_text()
+
+match = re.search(r'local user_opts\s*=\s*\{(.*?)\n\}', script, re.DOTALL)
+if not match:
+    raise SystemExit('Could not find ModernZ user_opts table')
+
+valid = set(re.findall(r'^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=', match.group(1), re.MULTILINE))
+configured = set()
+for raw_line in config.splitlines():
+    line = raw_line.strip()
+    if not line or line.startswith('#') or '=' not in line:
+        continue
+    key = line.split('=', 1)[0].strip()
+    configured.add(key)
+
+unknown = sorted(configured - valid)
+if unknown:
+    raise SystemExit('Unknown ModernZ options: ' + ', '.join(unknown))
+PY
+
 # Parse mpv.conf with mpv when available. The timeout is expected because idle mode stays open.
 if command -v mpv >/dev/null 2>&1; then
   log=$(mktemp)
