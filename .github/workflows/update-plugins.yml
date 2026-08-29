@@ -38,9 +38,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/
+          git add scripts/ script-opts/modernz.conf
           if git diff --cached --quiet; then
-            echo "Plugins are already current."
+            echo "Plugins and compatibility settings are already current."
             exit 0
           fi
           git commit -m "chore: update mpv plugins"
