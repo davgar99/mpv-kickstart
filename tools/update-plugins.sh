@@ -40,3 +40,24 @@ while IFS=$'\t' read -r url destination; do
   mkdir -p -- "$(dirname -- "$target")"
   install -m 0644 "$staged" "$target"
 done < "$manifest"
+
+# Preserve local customization while migrating options that upstream ModernZ removed or renamed.
+modernz_conf="$repo_root/script-opts/modernz.conf"
+if [[ -f "$modernz_conf" ]]; then
+  python3 - "$modernz_conf" <<'PY'
+from pathlib import Path
+import sys
+
+path = Path(sys.argv[1])
+text = path.read_text()
+text = text.replace(
+    '# set layout: "modern" or "modern-compact"\nlayout=modern\n',
+    '# set layout: default, compact, mini, seekbar\nlayout=default\n',
+)
+text = text.replace(
+    '# enable continuous skipping when holding down chapter skip buttons\nchapter_softrepeat=yes\n',
+    '',
+)
+path.write_text(text)
+PY
+fi
