@@ -1,0 +1,10 @@
+# kind	source	ref	source path	local destination
+raw	https://raw.githubusercontent.com/Samillion/ModernZ/main/modernz.lua	-	-	scripts/modernz.lua
+raw	https://raw.githubusercontent.com/Samillion/ModernZ/main/extras/pause-indicator-lite/pause_indicator_lite.lua	-	-	scripts/pause_indicator_lite.lua
+raw	https://raw.githubusercontent.com/Samillion/ModernZ/main/extras/pip-lite/pip_lite.lua	-	-	scripts/pip_lite.lua
+raw	https://raw.githubusercontent.com/po5/thumbfast/master/thumbfast.lua	-	-	scripts/thumbfast.lua
+raw	https://raw.githubusercontent.com/Samillion/mpv-boxtowide/master/boxtowide.lua	-	-	scripts/boxtowide.lua
+raw	https://raw.githubusercontent.com/jonniek/mpv-playlistmanager/master/playlistmanager.lua	-	-	scripts/playlistmanager.lua
+raw	https://raw.githubusercontent.com/hacel/recent/master/recent.lua	-	-	scripts/recent.lua
+git	https://github.com/CogentRedTester/mpv-file-browser.git	master	main.lua	scripts/file-browser/main.lua
+git	https://github.com/CogentRedTester/mpv-file-browser.git	master	modules	scripts/file-browser/modules
