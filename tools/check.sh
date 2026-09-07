@@ -18,6 +18,8 @@ else
   exit 1
 fi
 
+python3 tools/test-update-plugins.py
+
 mapfile -t lua_files < <(find scripts -type f -name '*.lua' -print | sort)
 if (( ${#lua_files[@]} == 0 )); then
   echo "No Lua plugins found" >&2
