@@ -28,9 +28,10 @@ validate_destination() {
 
 validate_lua_tree() {
   local path=$1
+  local destination=${2:-$path}
   [[ -z "$lua_compiler" ]] && return 0
 
-  if [[ -f "$path" && "$path" == *.lua ]]; then
+  if [[ -f "$path" && "$destination" == *.lua ]]; then
     "$lua_compiler" -p "$path"
   elif [[ -d "$path" ]]; then
     while IFS= read -r -d '' file; do
@@ -72,7 +73,7 @@ while IFS=$'\t' read -r kind source ref source_path destination; do
         exit 1
       fi
 
-      validate_lua_tree "$staged"
+      validate_lua_tree "$staged" "$target"
       mkdir -p -- "$(dirname -- "$target")"
       install -m 0644 "$staged" "$target"
       ;;
